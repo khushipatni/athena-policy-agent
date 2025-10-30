@@ -39,7 +39,8 @@ pdf-underwriter/
     ├── loan_policy.pdf                 # Sample input policy
     ├── app.json                        # Example applicant (approved)
     ├── app2.json                       # Example applicant (denied)
-    └── app3.json                       # Example applicant (denied)
+    ├── app3.json                       # Example applicant (denied)
+    └── test-output.png                 # Output for the example applicants
 
 ```
 
@@ -120,9 +121,8 @@ The project follows a simple, modular flow designed for clarity and scalability:
 > **PDF Policy → Extracted Rules → AI Agent → Decision JSON**
 
 ### 1. **`policy_parser.py` – Policy Understanding**
-- Reads the PDF and extracts key underwriting rules.  
-- Identifies **credit score tiers**, **DTI thresholds**, **income requirements**, and **special cases**.  
-- Outputs structured text ready for the AI agent to reason on.  
+- Reads the PDF and extracts key underwriting rules (**credit score tiers**, **DTI thresholds**, **income requirements**, and **special cases**).
+- Outputs text ready for the AI agent to reason on.  
 
 ### 2. **`agent.py` – Decision Engine**
 - Combines the **policy text** and **applicant data**, then sends it to **Gemini**.  
